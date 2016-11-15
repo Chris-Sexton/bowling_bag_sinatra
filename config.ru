@@ -5,7 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
-use BowlingEquipmentController 
+use BowlingBallsController 
 use BowlingBagsController  
 use UsersController   
 run ApplicationController
