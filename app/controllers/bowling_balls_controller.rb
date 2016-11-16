@@ -1,45 +1,45 @@
 class BowlingBallsController < ApplicationController 
-  get "/ball" do
+  get "/balls" do
     redirect_if_not_logged_in 
-    @ball = BowlingBall.all
-    erb :'bowling_ball/index'
+    @balls = BowlingBall.all
+    erb :'bowling_balls/index'
   end
 
-  get "/ball/new" do
+  get "/balls/new" do
     redirect_if_not_logged_in 
     @error_message = params[:error]
-    erb :'bowling_ball/new'
+    erb :'bowling_balls/new'
   end
 
-  get "/ball/:id/edit" do
+  get "/balls/:id/edit" do
     redirect_if_not_logged_in 
     @error_message = params[:error]
     @ball = BowlingBall.find(params[:id])
-    erb :'bowling_ball/edit'
+    erb :'bowling_balls/edit'
   end
 
-  post "/ball/:id" do
+  post "/balls/:id" do
     redirect_if_not_logged_in 
     @ball = BowlingBall.find(params[:id])
     unless BowlingBall.valid_params?(params)
-      redirect "/ball/#{@ball.id}/edit?error=invalid bowling ball"
+      redirect "/balls/#{@ball.id}/edit?error=invalid bowling ball"
     end
     @ball.update(params.select{|b| b =="name" || b =="manufacturer" || b =="bowling_ball_id"})
-    redirect "/ball/#{@ball.id}"
+    redirect "/balls/#{@ball.id}"
   end
 
-  get "/ball/:id" do
+  get "/balls/:id" do
     redirect_if_not_logged_in 
     @ball = BowlingBall.find(params[:id])
-    erb :'golf_ball/show'
+    erb :'bowling_balls/show'
   end
 
-  post "/ball" do
+  post "/balls" do
     redirect_if_not_logged_in 
     unless BowlingBall.valid_params?(params)
-      redirect "/ball/new?error=invalid bowling ball"
+      redirect "/balls/new?error=invalid bowling ball"
     end
     BowlingBall.create(params)
-    redirect "/ball"
+    redirect "/balls"
   end
 end

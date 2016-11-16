@@ -8,8 +8,9 @@
     <nav>
       <% if logged_in? %>
 
-        <a href="/"> Home </a>
-        <a href="/balls/new"> Add Bowling Ball </a>
+        <a href="/"> Home </a> &nbsp
+        <a href="/bags"> Bowling Bags </a> &nbsp
+        <a href="/balls/new"> Add Bowling Ball </a> &nbsp
         <a href="/logout"> Log Out </a>
         <p>Welcome, <%=current_user.username.capitalize %></p>
 
