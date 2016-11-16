@@ -1,0 +1,6 @@
+<p> Here are your Bowling Bags, <%= @user.username.capitalize %>
+<% @user.bowling_bags.each do |bag| %>
+  <ul>
+    <li><a href="/bags/<%=bag.id%>"><%= bag.name %></a></li>
+  </ul>
+<% end %>
