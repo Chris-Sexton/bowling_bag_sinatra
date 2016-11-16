@@ -1,0 +1,12 @@
+ <%= @bag.name %><br />
+  <%= @bag.capacity %> <br />
+
+  <h2>Bowling Balls</h2>
+  <ul>
+  <% @bag.bowling_balls.each do |ball| %>
+    <li><a href="/balls/<%=ball.id%>"><%= ball.name %></a></li>
+  <% end%>
+  </ul>
+  <a href="/bags/<%=@bag.id%>/edit">Edit</a>
+  <br />
+  <br />
