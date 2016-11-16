@@ -1,0 +1,7 @@
+<% @balls.each do |ball| %>
+  <%= ball.name %><br />
+  <%= ball.manufacturer %> <br />
+  <a href="/balls/<%=ball.id%>/edit">Edit</a>
+  <br />
+  <br />
+<% end %>
