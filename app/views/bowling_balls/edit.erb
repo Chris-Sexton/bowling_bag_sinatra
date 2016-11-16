@@ -8,7 +8,7 @@
   <input type="text" name="manufacturer" value="<%=@ball.manufacturer%>"> </br>
 
   <label> Which Bag does this Bowling Ball belong in? </label>
-  <select name="golf_bag_id">
+  <select name="bowling_bag_id">
     <% current_user.bowling_bags.each do |bag| %>
       <option value=<%=bag.id %> <%= "selected" if bag.id==@ball.bowling_bag.id %> ><%= bag.name %></option>
     <% end %>
