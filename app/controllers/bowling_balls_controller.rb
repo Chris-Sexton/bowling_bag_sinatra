@@ -24,7 +24,7 @@ class BowlingBallsController < ApplicationController
     unless BowlingBall.valid_params?(params)
       redirect "/balls/#{@ball.id}/edit?error=invalid bowling ball"
     end
-    @ball.update(params.select{|b| b =="name" || b =="manufacturer" || b =="bowling_ball_id"})
+    @ball.update(params.select{|b| b =="name" || b =="manufacturer" || b =="bowling_bag_id"})
     redirect "/balls/#{@ball.id}"
   end
 
@@ -32,6 +32,11 @@ class BowlingBallsController < ApplicationController
     redirect_if_not_logged_in 
     @ball = BowlingBall.find(params[:id])
     erb :'bowling_balls/show'
+  end
+
+  get '/balls/:id/delete' do 
+    @ball = BowlingBall.find_by_id(params[:id])
+    erb :'/balls/delete'
   end
 
   post "/balls" do

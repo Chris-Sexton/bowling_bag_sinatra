@@ -1,0 +1,6 @@
+<p>Are you sure you want to delete <%= @bag.name %>?</p>
+
+<form method="post" action="/bags/<%=@bag.id%>">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+<form>

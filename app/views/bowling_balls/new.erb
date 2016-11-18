@@ -10,7 +10,7 @@
   <label> Which Bowling Bag does this belong in? </label>
   <select name="bowling_bag_id">
     <% current_user.bowling_bags.each do |bag| %>
-      <option value=<%=bag.id %>><%= bag.name %></option>
+     <option value=<%= bag.id %>><%= bag.name %></option>
     <% end %>
   </select>
 

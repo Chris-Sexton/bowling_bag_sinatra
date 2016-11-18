@@ -35,6 +35,11 @@ class BowlingBagsController < ApplicationController
     erb :'bowling_bags/show'
   end
 
+  get '/bags/:id/delete' do
+    @bag = BowlingBag.find_by_id(params[:id])
+    erb :'bags/delete'
+  end
+
   post "/bags" do
     redirect_if_not_logged_in
 
