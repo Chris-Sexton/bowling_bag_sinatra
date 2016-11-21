@@ -35,7 +35,7 @@ class BowlingBallsController < ApplicationController
   end
 
   get '/balls/:id/delete' do 
-    @ball = BowlingBall.find_by_id(params[:id])
+    @ball = BowlingBall.find(params[:id])
     erb :'/balls/delete'
   end
 

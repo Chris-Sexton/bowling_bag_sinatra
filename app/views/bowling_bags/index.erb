@@ -4,7 +4,8 @@
 <% @bags.each do |bag| %>
   <%= bag.name %><br />
   <%= bag.capacity %> <br />
-  <a href="/bags/<%=bag.id%>/edit">Edit</a>
+  <a href="/bags/<%=bag.id%>/edit"> Edit </a>
+  <a href="/bags/<%= bag.id %>/delete"> Delete </a>
   <br />
   <br />
 <% end %>

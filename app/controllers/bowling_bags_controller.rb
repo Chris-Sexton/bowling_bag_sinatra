@@ -37,7 +37,8 @@ class BowlingBagsController < ApplicationController
 
   get '/bags/:id/delete' do
     @bag = BowlingBag.find_by_id(params[:id])
-    erb :'bags/delete'
+    @bag.destroy
+    erb :'bowling_bags/delete'
   end
 
   post "/bags" do

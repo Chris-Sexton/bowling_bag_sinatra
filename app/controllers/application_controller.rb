@@ -9,7 +9,6 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "bowlingsbagsareuseful"
   end
 
-
   get '/' do 
     erb :index
   end

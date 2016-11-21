@@ -1,6 +1,7 @@
-<p>Are you sure you want to delete <%= @bag.name %>?</p>
+<h1>Deleting <%= @bag.name %></h1>
 
-<form method="post" action="/bags/<%=@bag.id%>">
+<p>Are you sure you want to delete this bag?</p>
+<form method="delete" action="/bags">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="delete">
 <form>
